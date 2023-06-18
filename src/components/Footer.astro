@@ -1,0 +1,162 @@
+---
+import facebookLogo from "../images/facebook.svg";
+import fullStop from "../images/full-stop-24.png";
+import instagramLogo from "../images/icons8-instagram.svg";
+import twitterLogo from "../images/icons8-twitter.svg";
+import youtubeLogo from "../images/icons8-youtube.svg";
+---
+
+<footer class="container footer">
+  <div class="footer__heading">
+    <div class="footer__heading-text">
+      <h1>Contact Info</h1>
+    </div>
+    <div class="footer__contact-info">
+      <div class="footer__contact-info__item phone">
+        <p>Phone Number</p>
+        <ul>
+          <li><img src={fullStop} alt="" /> +2348062841527</li>
+          <li>
+            <a href="#">
+              <img src={fullStop} alt="" />
+              Click to chat on Whatsapp
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__contact-info__item email">
+        <p>Email</p>
+        <ul>
+          <li>
+            <img src={fullStop} alt="" />
+            <span>hell@reverie.ng</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__contact-info__item social">
+        <p>Social</p>
+        <ul>
+          <li>
+            <a href="#">
+              <img class="insta" src={instagramLogo} alt="instagam logo" />
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="facebook" src={facebookLogo} alt="facebook logo" />
+            </a>
+            <span>Facebook</span>
+          </li>
+          <li>
+            <a href="#">
+              <img class="twitter" src={twitterLogo} alt="twitter logo" />
+              <span>Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class="youtube" src={youtubeLogo} alt="youtube logo" />
+              <span>Youtube</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__text">
+    <p>&copy; The Reverie 2023 | All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer__heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer__heading-text {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 20%;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  .footer__contact-info {
+    display: flex;
+    width: 65%;
+  }
+
+  .footer__contact-info__item {
+    width: 35%;
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+  .footer__contact-info__item p,
+  span {
+    font-size: 1.2rem;
+  }
+
+  .footer__contact-info__item:nth-child(1) {
+    margin-left: -20px;
+    margin-right: 10px;
+  }
+
+  .footer__contact-info__item p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  .phone li:nth-child(2) > span {
+    margin-top: -4px;
+    border: 1px solid red;
+  }
+
+  img.twitter,
+  img.youtube {
+    width: 20%;
+  }
+  img.insta {
+    width: 15%;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    margin-left: 10px;
+  }
+
+  .phone a {
+    color: green;
+  }
+
+  .footer__text {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer__contact-info__item {
+      width: 100%;
+    }
+  }
+</style>

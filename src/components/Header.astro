@@ -1,0 +1,81 @@
+---
+import logo from "../images/reverie-logo.jpeg";
+---
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/"><img src={logo} alt="novelle logo" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/brokerage">Brokerage</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    margin-top: 15px;
+    display: flex;
+  }
+
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    margin-left: -150px;
+  }
+
+  ul li {
+    list-style: none;
+    margin-left: 160px;
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  ul li a:hover {
+    border-bottom: solid 3px blue;
+    color: blue;
+  }
+
+  ul li a:focus {
+    font-weight: 600;
+    color: blue;
+  }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .header .container {
+      flex-direction: column;
+    }
+
+    .logo {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 0;
+      justify-content: center;
+    }
+
+    ul li {
+      margin-left: 10px;
+    }
+  }
+</style>

@@ -1,36 +1,72 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 export interface Props {
-	title: string;
+  title: string;
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;800&display=swap");
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #fff;
+    color: #333;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    line-height: 2;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+
+  .container {
+    max-width: 1200px;
+    padding: 0 80px;
+  }
 </style>

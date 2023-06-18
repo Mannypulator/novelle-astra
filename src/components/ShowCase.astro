@@ -1,0 +1,195 @@
+---
+import bg1 from "../images/brick-home-exterior.jpg";
+import bg2 from "../images/rain-falls-on-clean-pool-and-deck.jpg";
+---
+
+<main class="showcase container">
+  <div class="showcase__desciption-container">
+    <p class="showcase__description">
+      We are a customer -centic company, offering steller real estate
+      experiences through our wide range of bespoke sevices.
+    </p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <h2 class="card__title">Novelle Brokerage</h2>
+      <p class="card__description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni
+        labore rerum consequuntur ipsam dicta reprehenderit in quod, libero
+      </p>
+      <a href="" class="card__link">Explore</a>
+    </div>
+    <div class="card">
+      <h2 class="card__title">Novelle Development</h2>
+      <p class="card__description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni
+        labore rerum consequuntur ipsam dicta reprehenderit in quod, libero
+      </p>
+      <a href="" class="card__link">Explore</a>
+    </div>
+  </div>
+</main>
+
+<style>
+  .showcase {
+    text-align: center;
+  }
+  .showcase__desciption-container {
+    margin-top: 20px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .showcase__description {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-top: 90px;
+    margin-bottom: 60px;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 600px;
+    margin-left: 20px;
+    vertical-align: middle;
+    border-radius: 10px;
+    padding: 80px 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+
+  .card:nth-child(1) {
+    background-image: url(../images/brick-home-exterior.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .card:nth-child(2) {
+    background-image: url(../images/rain-falls-on-clean-pool-and-deck.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
+    border-radius: 10px;
+  }
+
+  .card__title {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 100%;
+    /* margin-top: 90px; */
+  }
+
+  .card__description {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .card__link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    /* make background transparent */
+    background-color: transparent;
+  }
+
+  .card__title,
+  .card__description,
+  .card__link {
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+
+  .card__link:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* add an overlay on the background image
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  } */
+
+  /* .card:nth-child(2)::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .card:nth-child(1)::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  } */
+
+  /* @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+    }
+
+    .card {
+      margin: 20px 0;
+    }
+  } */
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .showcase__desciption-container {
+      width: 90%;
+    }
+
+    .card {
+      width: 90%;
+      height: auto;
+      margin-left: 0;
+      margin-bottom: 20px;
+      padding: 40px 20px;
+    }
+
+    .card:nth-child(1),
+    .card:nth-child(2) {
+      background-position: top;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .showcase__description {
+      font-size: 2rem;
+    }
+
+    .card {
+      padding: 40px 10px;
+    }
+  }
+</style>
