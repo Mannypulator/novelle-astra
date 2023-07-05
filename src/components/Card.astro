@@ -1,35 +1,205 @@
 ---
 export interface Props {
-  title: string;
-  body: string;
-  href: string;
-  imgUrl: string;
+    title: string;
+    amount: string;
+    location: string;
+    numberOfBed: number;
+    numberOfCar: number;
+    numberOfBath: number;
 }
 
-
-
-const { href, title, body, imgUrl } = Astro.props as Props;
+const { title, amount, location, numberOfBed, numberOfCar, numberOfBath } =
+    Astro.props as Props;
 ---
 
 <div class="card">
-            <div class="card__description">
-                <p class="card__text">5 Bedroom Detached Mansion</p>
-                <p class="card__amount">$950,000,000</p>
-            </div>
-            <div class="card__description--full">
-                <p class="card__text--full">
-                    5 Bedroom Detached Duplex
-                </p>
-                <p class="card__location">Ikoyi,Lagos</p>
-                <ul class="luxuries">
-                    <li>5 Bed</li>
-                    <li>6 Cars</li>
-                    <li>6 Bathrooms</li>
-                </ul>
-                <p class="card__amount--full">$950,000,000</p>
-                <a href="#">See more</a>
-            </div>
-        </div>
+    <div class="card__description">
+        <p class="card__text">{title}</p>
+        <p class="card__amount">${amount}</p>
+    </div>
+    <div class="card__description--full">
+        <p class="card__text--full">
+            {title}
+        </p>
+        <p class="card__location">{location}</p>
+        <ul class="luxuries">
+            <li>{numberOfBed} Bed</li>
+            <li>{numberOfCar} Cars</li>
+            <li>{numberOfBath} Bathrooms</li>
+        </ul>
+        <p class="card__amount--full">${amount}</p>
+        <a href="#">See more</a>
+    </div>
+</div>
 
 
+<style>
 
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 450px;
+        margin-left: 20px;
+        vertical-align: middle;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: #fff;
+    }
+
+    .card:nth-child(1) {
+        /* give background image */
+        background-image: url("../images/architecture-5339245_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .card:nth-child(2) {
+        /* give background image */
+        background-image: url("../images/residence-2219972_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .card:nth-child(3) {
+        /* give background image */
+        background-image: url("../images/house-1836070_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .card__description {
+        margin-top: 300px;
+        z-index: 1;
+        display: block;
+        transition: display 0.5s ease;
+    }
+
+    .card__text,
+    .card__amount {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    .card__text {
+        width: 100%;
+        font-size: 1.3rem;
+        margin-bottom: -20px;
+    }
+    .card__amount {
+        font-size: 2.8rem;
+        width: 100%;
+    }
+
+    .card__description--full {
+        z-index: 1;
+        margin-top: -10px;
+        text-align: center;
+        width: 80%;
+        display: none;
+        transition: display 0.5s ease;
+    }
+
+    .card__text--full {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .card__location,
+    .luxuries li {
+        font-size: 1.3rem;
+        margin-bottom: -4px;
+    }
+
+    .card__amount--full {
+        font-size: 1.8rem;
+        margin-top: -0.6rem;
+    }
+    li {
+        margin-bottom: -0.6rem !important;
+    }
+    .card__description--full a {
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7) !important;
+        border-radius: 10px;
+    }
+
+    /* on hover on each card , change the background image and make the recommend-card__description hidden while recommend-card__description--full becomes visible */
+
+    .card:nth-child(1):hover {
+        background-image: url("../images/architecture-5339245_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .card:nth-child(2):hover {
+        background-image: url("../images/residence-2219972_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .card:nth-child(3):hover {
+        background-image: url("../images/house-1836070_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+     .card:nth-child(3):hover {
+        background-image: url("../images/house-1836070_1920.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .card:nth-child(1):hover .card__description {
+        display: none;
+        transition: display 0.5s ease;
+    }
+  
+
+    .card:nth-child(2):hover .card__description {
+        display: none;
+        transition: display 0.5s ease;
+    }
+
+    .card:nth-child(3):hover .card__description {
+        display: none;
+        transition: display 0.5s ease;
+        background-image: url("../images/house-1867187_1280.jpg");
+    }
+
+    .card:nth-child(1):hover .card__description--full {
+        display: block;
+        transition: display 0.5s ease;
+    }
+    .card:nth-child(2):hover .card__description--full {
+        display: block;
+        transition: display 0.5s ease;
+    }
+    .card:nth-child(3):hover .card__description--full {
+        display: block;
+        transition: display 0.5s ease;
+        
+    }
+</style>
